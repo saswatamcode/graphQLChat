@@ -3,7 +3,7 @@ import { ObjectType, Field } from "type-graphql";
 @ObjectType()
 export class Chat {
   @Field()
-  id: string;
+  id: number;
 
   @Field()
   message: string;
