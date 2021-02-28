@@ -1,8 +1,8 @@
 import "reflect-metadata";
-import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { ChatResolver } from "./resolvers/chat";
+import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 

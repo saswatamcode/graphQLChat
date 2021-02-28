@@ -2,9 +2,8 @@ import { Mutation, Query, Resolver, Arg } from "type-graphql";
 import { Chat } from "../entities/Chat";
 
 const chats: Chat[] = [];
-// const CHAT_CHANNEL = "CHAT_CHANNEL";
 
-@Resolver(Chat)
+@Resolver()
 export class ChatResolver {
   @Query(() => [Chat])
   getChats(): Chat[] {
@@ -12,10 +11,7 @@ export class ChatResolver {
   }
 
   @Mutation(() => Chat)
-  createChat(
-    @Arg("name") name: string,
-    @Arg("message") message: string
-  ): Chat {
+  createChat(@Arg("name") name: string, @Arg("message") message: string): Chat {
     const chat = { id: chats.length + 1, name, message };
     chats.push(chat);
     return chat;
