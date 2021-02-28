@@ -31,9 +31,9 @@ const Chats = () => {
         if (!subscriptionData.data) return prev;
         const newChat = subscriptionData.data.messageSent;
 
-        return Object.assign({}, prev, {
+        return {
           getChats: [...prev.getChats, newChat],
-        });
+        };
       },
     });
   }, []);
@@ -45,7 +45,9 @@ const Chats = () => {
     <div>
       {data.getChats.map((chat: any) => (
         <div key={chat.id}>
-          <p>{chat.name}: {chat.message}</p>
+          <p>
+            {chat.name}: {chat.message}
+          </p>
         </div>
       ))}
     </div>

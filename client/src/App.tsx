@@ -55,7 +55,7 @@ const App = () => {
           </div>
         )}
 
-        {name != "" && entered && (
+        {name !== "" && entered && (
           <div>
             <Chats />
             <SendMessage name={name} />

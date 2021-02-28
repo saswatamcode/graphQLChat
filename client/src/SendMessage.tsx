@@ -17,13 +17,15 @@ interface SendMessageProps {
 
 const SendMessage: FC<SendMessageProps> = ({ name }) => {
   const [input, setInput] = useState<string>("");
-  const [sendMessage, { data }] = useMutation(SEND_MESSAGE);
+  const [sendMessage] = useMutation(SEND_MESSAGE);
 
   const handleSend = () => {
-    sendMessage({ variables: { name: name, message: input } }).then((data) => {
-      console.log(data);
-      setInput("");
-    }).catch((err) => console.log(err));
+    sendMessage({ variables: { name: name, message: input } })
+      .then((data) => {
+        console.log(data);
+        setInput("");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
