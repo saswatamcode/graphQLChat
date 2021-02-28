@@ -13,7 +13,7 @@ import { Chat } from "../entities/Chat";
 const chats: Chat[] = [];
 const channel = "CHAT_CHANNEL";
 
-@Resolver(Chat)
+@Resolver()
 export class ChatResolver {
   @Query(() => [Chat])
   getChats(): Chat[] {
